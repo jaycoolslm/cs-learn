@@ -7,6 +7,7 @@
         name: string;
         image: string;
         sessions: any;
+        difficulty: number;
     };
     const { description, name, image, difficulty, sessions } = data;
 </script>

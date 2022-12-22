@@ -1,9 +1,5 @@
 <script lang="ts">
-	import logoLinear from "$lib/assets/logos/cs-linear/orange.svg";
-	import logoCircle from "$lib/assets/logos/cs-circle/orange.svg";
 	import Socials from "$lib/components/card/Socials.svelte";
-	import { browser } from "$app/environment";
-	import { onMount, onDestroy } from "svelte";
 
 	interface Links {
 		name: string;
