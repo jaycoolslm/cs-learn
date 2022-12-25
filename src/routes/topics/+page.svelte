@@ -3,8 +3,6 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 	const { topics } = data;
-
-	console.log(topics);
 </script>
 
 <h1>Topics</h1>

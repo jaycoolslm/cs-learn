@@ -2,9 +2,10 @@
 	import Nav from "$lib/components/navigation/Nav.svelte";
 	import { page } from "$app/stores";
 
-	let current = $page.route.id;
+	let current = $page.route.id!.split("/")[1]!;
 	$: {
 		current = $page.route.id!.split("/")[1]!;
+		console.log(current);
 	}
 </script>
 

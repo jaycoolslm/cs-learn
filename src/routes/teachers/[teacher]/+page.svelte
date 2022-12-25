@@ -1,10 +1,13 @@
 <script lang="ts">
 	import Stars from "$lib/components/icons/Stars.svelte";
-	import { InlineCalendar } from "svelte-calendar";
+	import { Datepicker } from "svelte-calendar";
+	import dayjs from "dayjs";
+
+	let store: any;
 
 	const theme = {
 		calendar: {
-			width: "calc(400px + 4rem);",
+			// width: "400px;",
 			shadow: "0px 0px 5px rgba(0, 0, 0, 0.25)",
 			colors: {
 				background: {
@@ -64,10 +67,6 @@
 
 	<section class="lessons">
 		<div>
-			<h3>Book a 1-1 session with {teacher.name}</h3>
-			<InlineCalendar {theme} />
-		</div>
-		<div>
 			<span class="text">
 				<h3>Upcoming lessons</h3>
 				<span class="view-all">
@@ -83,6 +82,19 @@
 					<p>{lesson.time}</p>
 				</div>
 			{/each}
+		</div>
+		<div>
+			<h3>Book a 1-1 session with {teacher.name}</h3>
+			<Datepicker {theme} bind:store let:key let:send let:receive>
+				<button in:receive|local={{ key }} out:send|local={{ key }}>
+					{#if $store?.hasChosen}
+						{dayjs($store.selected).format("ddd MMM D, YYYY")}
+					{:else}
+						Pick a Date
+					{/if}
+				</button>
+			</Datepicker>
+			<!-- <InlineCalendar {theme} /> -->
 		</div>
 	</section>
 </main>
@@ -152,7 +164,15 @@
 				}
 			}
 		}
-
+		button {
+			background: var(--orange);
+			color: #fff;
+			border: 0;
+			padding: 18px 30px;
+			font-size: 1.2em;
+			border-radius: 6px;
+			cursor: pointer;
+		}
 		.lessons {
 			margin-top: $displacement;
 			div {

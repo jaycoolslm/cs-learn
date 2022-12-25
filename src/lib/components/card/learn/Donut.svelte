@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import chartjs from "chart.js";
 
     export let difficulty: number;
     let colour: string;
@@ -28,9 +29,9 @@
 
     let ctx: any, chartCanvas: any;
 
-    onMount(() => {
+    onMount(async () => {
         ctx = chartCanvas.getContext("2d");
-        new Chart(ctx, {
+        new chartjs(ctx, {
             type: "doughnut",
             data: {
                 datasets: [
@@ -51,10 +52,8 @@
             },
         });
     });
-</script>
 
-<svelte:head>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</svelte:head>
+    $: console.log(chartCanvas);
+</script>
 
 <canvas bind:this={chartCanvas} width={128} id="difficultyDonut" />

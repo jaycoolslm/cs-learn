@@ -12,6 +12,10 @@
     const { description, name, image, difficulty, sessions } = data;
 </script>
 
+<!-- <svelte:head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</svelte:head> -->
+
 <section>
     <img src={image} alt={name} />
     <h2>{name}</h2>
