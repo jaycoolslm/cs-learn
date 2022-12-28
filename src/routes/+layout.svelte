@@ -29,10 +29,10 @@
 				<i class="fa-solid fa-chalkboard-user" />
 				<li>Teachers</li>
 			</a>
-			<a class:active={current === "community"} href="/community">
+			<!-- <a class:active={current === "community"} href="/community">
 				<i class="fa-solid fa-user-group" />
 				<li>Community</li>
-			</a>
+			</a> -->
 		</ul>
 	</nav>
 	<div>
