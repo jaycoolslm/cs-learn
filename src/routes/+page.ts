@@ -8,6 +8,7 @@ export const load = (async () => {
 
     const sessions = await getCollection("sessions")
 
+
     return { sessions }
 
 
