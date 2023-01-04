@@ -6,7 +6,7 @@
 
 <main>
     <Cta
-        href="/"
+        href="host/create"
         aText="Create host account"
         style="width: 50%; min-width: 266px"
     >
