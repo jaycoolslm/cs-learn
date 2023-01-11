@@ -102,6 +102,10 @@
         background-color: white;
         text-align: center;
         padding: 2rem;
+        img {
+            width: 80%;
+            max-width: 700px;
+        }
         & > * {
             margin-bottom: 1rem;
         }

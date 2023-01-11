@@ -76,26 +76,34 @@
 		}
 	}
 
-	div {
-		margin-left: 195px;
-		padding: 2rem;
-		background-color: #eee;
+	@media screen and (min-width: 769px) {
+		div {
+			margin-left: 195px;
+			padding: 2rem;
+			background-color: #eee;
+		}
 	}
 
 	@media screen and (max-width: 768px) {
 		nav {
-			a {
-				justify-content: center;
-				i {
-					margin-right: 0 !important;
-				}
-				li {
-					display: none;
+			bottom: 1rem;
+			width: 100vw;
+			height: auto;
+			padding-top: 1rem;
+			ul {
+				display: flex;
+				justify-content: space-around;
+				padding: 0;
+				a {
+					justify-content: center;
+					i {
+						margin-right: 0 !important;
+					}
+					li {
+						display: none;
+					}
 				}
 			}
-		}
-		div {
-			margin-left: 84px;
 		}
 	}
 </style>

@@ -16,6 +16,7 @@
             onInit: () => {},
             onChange: () => {},
         }); //end Siema constructor
+
         prev = () => {
             slider.prev();
             if (select > 0) {
@@ -38,7 +39,8 @@
 <section>
     <h1>Apply to become a host</h1>
     <span class="progress" />
-    <div class="bullet">
+    <span class="remaining" />
+    <!-- <div class="bullet">
         {#each { length: 5 } as _, i}
             <input
                 class="radio"
@@ -53,13 +55,15 @@
                 }}
             />
         {/each}
-    </div>
+    </div> -->
     <div class="siema">
         <div>
             <h2>Name</h2>
             <input type="text" name="name" id="name" placeholder="Joe Bloggs" />
-            <h2>Title</h2>
+            <h2>Area of Expertise</h2>
+            <!-- Add dropdown here -->
             <input type="text" name="title" id="title" placeholder="Writer" />
+            <!-- Add email field -->
         </div>
         <div>
             <h2>Bio</h2>
@@ -122,9 +126,8 @@
             <h2>Session plan</h2>
         </div>
     </div>
-
-    <button id="back" on:click={prev}>Back </button>
-    <button id="next" on:click={next}>Next </button>
+    <button id="back" on:click={prev}>Back</button>
+    <button id="next" on:click={next}>Next</button>
 </section>
 
 <style lang="scss">
@@ -164,32 +167,9 @@
                     border: 1px solid lightgrey;
                 }
                 textarea {
-                    height: 100%;
+                    height: 200px;
                 }
             }
-        }
-
-        .bullet {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 4rem;
-        }
-        input.radio {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border-radius: 50%;
-            width: 8px;
-            height: 8px;
-            background-color: lightgrey;
-            transition: 0.2s all linear;
-            margin-right: 5px;
-            position: relative;
-            top: 4px;
-        }
-        input.radio:checked {
-            background-color: grey;
         }
     }
 
